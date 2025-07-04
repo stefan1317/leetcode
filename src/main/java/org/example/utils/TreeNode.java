@@ -81,6 +81,70 @@ public class TreeNode {
         return root;
     }
 
+    public static List<Integer> preorder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        if (root == null) {
+            return result;
+        }
+
+        result.add(root.getVal());
+        result.addAll(preorder(root.getLeft()));
+        result.addAll(preorder(root.getRight()));
+
+        return result;
+    }
+
+    public static List<Integer> inorder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        if (root == null) {
+            return result;
+        }
+
+        result.addAll(inorder(root.getLeft()));
+        result.add(root.getVal());
+        result.addAll(inorder(root.getRight()));
+
+        return result;
+    }
+
+    public static List<Integer> postorder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        if (root == null) {
+            return result;
+        }
+
+        result.addAll(postorder(root.getLeft()));
+        result.addAll(postorder(root.getRight()));
+        result.add(root.getVal());
+
+        return result;
+    }
+
+    public static List<Integer> bfs(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.poll();
+
+            result.add(current.getVal());
+
+            if (current.getLeft() != null) {
+                queue.add(current.getLeft());
+            }
+
+            if (current.getRight() != null) {
+                queue.add(current.getRight());
+            }
+        }
+
+        return result;
+    }
+
     public static List<Integer> getListFromTree(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
