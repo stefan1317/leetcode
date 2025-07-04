@@ -1,4 +1,4 @@
-package org.example.problems;
+package org.example.problems.assignments;
 
 import java.util.Arrays;
 import java.util.List;

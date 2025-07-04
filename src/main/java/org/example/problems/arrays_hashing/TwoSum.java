@@ -1,8 +1,16 @@
-package org.example.problems;
+package org.example.problems.arrays_hashing;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3, 4}, 7)));
+        System.out.println(Arrays.toString(twoSum2(new int[]{1, 2, 3, 4}, 7)));
+    }
+
     public static int[] twoSum(int[] nums, int target) {
         int[] sol = new int[2];
 

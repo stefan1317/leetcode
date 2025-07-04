@@ -1,8 +1,16 @@
-package org.example.problems;
+package org.example.problems.arrays_hashing;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GroupAnagram {
+
+    public static void main(String[] args) {
+        System.out.println(isAnagram("ana", "ana"));
+    }
+
     public static boolean isAnagram(String s, String t) {
         HashMap<String, Integer> sChars = new HashMap<>();
         HashMap<String, Integer> tChars = new HashMap<>();
